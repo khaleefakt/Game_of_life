@@ -9,10 +9,20 @@ def board(size):
     return board
 
 
-def cell_alive(row, col):
+def cell_alive_check(cell):
     #Check whether the cell is active or not 
-    cell = []
+    #cell = board(3)
     if cell  == 1:
         return True
     else:
         return False
+
+"""def make_alive(board, row, col):
+    live_cell = board()
+    cell = cell_alive_check()
+    r_1 = 
+    for i in row:
+        for j in col:
+            if cell == 1:
+                set cell == 0"""
+                
