@@ -8,3 +8,11 @@ def board(size):
     board=[[0,1,0],[0,1,0],[0,1,0]]
     return board
 
+
+def cell_alive(row, col):
+    #Check whether the cell is active or not 
+    cell = []
+    if cell  == 1:
+        return True
+    else:
+        return False
