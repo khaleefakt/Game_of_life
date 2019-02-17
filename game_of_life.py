@@ -133,5 +133,11 @@ def all_neighbour_check(board):
         
     return result
 
+def set_rule(board, neighbour):
+    for row in range(3):
+        for col in range(3):
+            if cell_alive_check(board[row][col]):
+                if neighbour[row][col] < 2:
+                    board[row][col] = 0
 
- 
+    return board
