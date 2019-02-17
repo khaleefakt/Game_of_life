@@ -28,7 +28,7 @@ def test_all_neighbour_check():
 def test_rules():
     board = [[0,1,0],[0,1,0],[0,1,0]]
     neig =  [[2,1,2],[3,2,3],[2,1,2]]
-    result = [[0,0,0],[0,1,0],[0,0,0]]
-    
+    result = [[0,0,0],[1,1,1],[0,0,0]]
+
     assert game_of_life.set_rule(board,neig)== result
     

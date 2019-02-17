@@ -139,5 +139,12 @@ def set_rule(board, neighbour):
             if cell_alive_check(board[row][col]):
                 if neighbour[row][col] < 2:
                     board[row][col] = 0
+                if neighbour[row][col] == 2 or neighbour[row][col] == 3:
+                    board[row][col] = 1
+                if neighbour[row][col] > 3:
+                    board[row][col] = 0
+            else:
+                if neighbour[row][col] == 3:
+                    board[row][col] = 1
 
     return board
