@@ -148,3 +148,20 @@ def set_rule(board, neighbour):
                     board[row][col] = 1
 
     return board
+
+def display(board):
+    for row in range(3):
+        for col in range(3):
+            if cell_alive_check(board[row][col]):
+                print("1", end=' ')
+            else:
+                print("0", end=' ')
+        print("\n")
+
+
+#if __name__ == "__main__":
+    
+
+
+
+        
