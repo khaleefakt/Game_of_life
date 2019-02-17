@@ -1,4 +1,5 @@
 #test_game_of _life
+
 import game_of_life
 
 def test_matrix():
@@ -10,10 +11,30 @@ def test_check_cell_alive():
     assert game_of_life.cell_alive_check(board[0][1]) == True
     assert game_of_life.cell_alive_check(board[1][1]) == True
     assert game_of_life.cell_alive_check(board[2][1]) == True
+    assert game_of_life.cell_alive_check(board[2][2]) == False
 
+
+def test_all_neighbour_check():
+    board = [[0,1,0],[0,1,0],[0,1,0]]
+    result = [[2,1,2],[3,2,3],[2,1,2]]
+    assert game_of_life.all_neighbour_check(board) == result
+
+    
 """def test_make_alive_cell():
     board = [[0,1,0],[0,1,0][0,1,0]]
-    assert game_of_life.cell.make_alive(board[1],[0]) == True
-    assert game_of_life.cell.make_alive(board[1],[1]) == True
-    assert game_of_life.cell.make_alive(board[1],[2]) == True"""
+    assert game_of_life.make_alive(board[1][0]) == True
+    assert game_of_life.make_alive(board[1][1]) == True
+    assert game_of_life.make_alive(board[1][2]) == True
+    assert game_of_life.make_alive(board[2][1]) == False"""
+
+#  1.  Any live cell with fewer than two live neighbors dies, as if by underpopulation.
+#  2.  Any live cell with two or three live neighbors lives on to the next generation.
+#  3.  Any live cell with more than three live neighbors dies, as if by overpopulation.
+#  4.  Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+
+"""def test_rules():
+    board = [[0,1,0],[0,1,0],[0,1,0]]
+    result = [[0,0,0][1,1,1],[0,0,0]]
+    
+    assert game_of_life.set_rules(board("""
     
