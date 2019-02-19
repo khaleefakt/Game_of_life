@@ -158,10 +158,17 @@ def display(board):
                 print("0", end=' ')
         print("\n")
 
-
-#if __name__ == "__main__":
+def main(board):
+    display(board)
+    a=  set_rule(board,all_neighbour_check(board))
+    return a 
     
-
-
+    
+if __name__ == "__main__":
+    board = [[0,1,0],[0,1,0],[0,1,0]]
+    for i in range(10):
+        print(f"{i} Generation")
+        main(board)
+        
 
         
