@@ -2,6 +2,7 @@
 #  2.  Any live cell with two or three live neighbors lives on to the next generation.
 #  3.  Any live cell with more than three live neighbors dies, as if by overpopulation.
 #  4.  Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+import time
 
 def board(size):
     """Create a 3*3 matrix """
@@ -153,9 +154,9 @@ def display(board):
     for row in range(3):
         for col in range(3):
             if cell_alive_check(board[row][col]):
-                print("1", end=' ')
+                print(" 1 ", end=' ')
             else:
-                print("0", end=' ')
+                print(" 0 ", end=' ')
         print("\n")
 
 def main(board):
@@ -167,7 +168,8 @@ def main(board):
 if __name__ == "__main__":
     board = [[0,1,0],[0,1,0],[0,1,0]]
     for i in range(10):
-        print(f"{i} Generation")
+        print(f"\n{i} Generation")
+        time.sleep(1)
         main(board)
         
 
