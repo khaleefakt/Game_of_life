@@ -16,8 +16,7 @@ def test_check_cell_alive():
 
 def test_all_neighbour_check():
     board = [[0,1,0],[0,1,0],[0,1,0]]
-    result = [[2,1,2],[3,2,3],[2,1,2]]
-    assert game_of_life.all_neighbour_check(board) == result
+    assert game_of_life.neighbour_check(board,0,0) == 2
 
     
 #  1.  Any live cell with fewer than two live neighbors dies, as if by underpopulation.
