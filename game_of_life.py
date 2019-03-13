@@ -11,16 +11,7 @@ def board(size):
 
 def cell_alive_check(cell):
     return cell  == 1
-    
-"""def all_neighbour_check(board):
-    result =[[0,0,0],[0,0,0],[0,0,0]]
-    for row in range(3):
-        for col in ran ge(3):
-            if row ==0 and col == 0:
-                count =0
-                if cell_alive_check(board[row][col+1]):
-                    count += 1
-""" 
+
 def neighbour_check(board,row,col):
     size_limit = len(board)-1
     count = 0
@@ -37,7 +28,7 @@ def neighbour_check(board,row,col):
     return count
 
 def set_rule(board, neighbour):
-    size = 3
+    size =3
     for row in range(size):
         for col in range(size):
             if cell_alive_check(board[row][col]):
@@ -53,9 +44,13 @@ def set_rule(board, neighbour):
 
     return board
 
+def 
+
+
 def display(board):
-    for row in range(3):
-        for col in range(3):
+    size = size(baord)
+    for row in range(size):
+        for col in range(size):
             if cell_alive_check(board[row][col]):
                 print(" 1 ", end=' ')
             else:
@@ -63,17 +58,17 @@ def display(board):
         print("\n")
 
 def main(board):
-    display(board)
-    a=  set_rule(board,neighbour_check(board))
-    return a 
-    
-    
-if __name__ == "__main__":
     board = [[0,1,0],[0,1,0],[0,1,0]]
     for i in range(10):
         print(f"\n{i} Generation")
         time.sleep(1)
-        main(board)
+        display(board)
+        a=  set_rule(board,neighbour_check(board,row,col))
+    return a 
+    
+    
+if __name__ == "__main__":
+    main(board)
         
 
         
