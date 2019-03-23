@@ -1,9 +1,5 @@
 import time
 
-
-def cell_alive_check(cell):
-    return cell  == 1
-
 def neighbour_check(board,row,col):
     size_limit = len(board)-1
     count = 0
@@ -24,6 +20,9 @@ def neighbour_check(board,row,col):
 #  3.  Any live cell with more than three live neighbors dies, as if by overpopulation.
 #  4.  Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
 
+def is_alive(cell):
+    return cell == 1
+
 def set_rule(board):
     new_board=[[0,0,0],
                [0,0,0],
@@ -32,14 +31,15 @@ def set_rule(board):
     col_size = len(board)
     for row in range(row_size):
         for col in range(col_size):
-            if neighbour_check(board,row,col) < 2 and board[row][col] == 1:
-                new_board[row][col] = 0
-            elif neighbour_check(board,row,col) in [2,3] and board[row][col] == 1:
-                new_board[row][col] = 1
-            elif neighbour_check(board,row,col) > 3 and board[row][col] == 1:
-                new_board[row][col]= 0
+            if is_alive(board[row][col]):
+                if neighbour_check(board,row,col) < 2:
+                    new_board[row][col] = 0
+                if neighbour_check(board,row,col) in [2,3]:
+                    new_board[row][col] = 1
+                if neighbour_check(board,row,col) > 3:
+                    new_board[row][col]= 0
             else:
-                if neighbour_check(board,row,col) == 3 and board[row][row] == 0:
+                if neighbour_check(board,row,col) == 3:
                     new_board[row][col] =1
 
     return new_board
@@ -65,7 +65,7 @@ def main(board):
         time.sleep(0.5)
         print(display(board))
         board = set_rule(board)
-    time.sleep(0.5)
+   
     
     
 if __name__ == "__main__":
